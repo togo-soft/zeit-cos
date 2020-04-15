@@ -1,19 +1,19 @@
-## zeit-oss
+## zeit-cos
 
-[OssGo](https://github.com/togo-soft/zeit-oss)是一个基于 Go+Vue 开发的阿里云OSS对象存储服务管理应用。
+[CosGo](https://github.com/togo-soft/zeit-cos)是一个基于 Go+Vue 开发的腾讯云COS对象存储服务管理应用。
 
-该项目用于直接以函数服务部署[OssGo](https://github.com/togo-soft/zeit-oss)项目而无需任何其他操作。
+该项目用于直接以函数服务部署[CosGo](https://github.com/togo-soft/zeit-cos)项目而无需任何其他操作。
 
-使用前请克隆或分叉该项目, 修改`api/main.go`文件下的第15行
+使用前请克隆或分叉该项目, 修改`api/main.go`文件下的第18行
 
 ```go
-// oss 是阿里云配置项
-oss = &Oss{
-		Bucket:   "-",                                            //Bucket名称
-		Ak:       "-",                                            //Accesskey
-		Sk:       "-",                                            //Secretkey
-		Endpoint: "oss-cn-shanghai.aliyuncs.com",                 //地域节点
-		Domain:   "https://xuthus.oss-cn-shanghai.aliyuncs.com/", //OSS外网访问域名 [结尾请带/]
+// config 是阿里云配置项
+config = &Cos{
+		SecretID:  "",//API密钥ID
+		SecretKey: "",//API密钥私钥
+		Bucket:    "",//存储桶名称 规则 name-appid
+		Region:    "",//存储桶所属地域 规则 ap-nanjing
+		Domain:    "", //自定义域名 若为空 返回默认指定域名[域名以/结尾]
 	}
 ```
 
@@ -28,4 +28,4 @@ oss = &Oss{
 
 单击按钮直接部署(由于配置信息未填写, 部署或将无法工作).
 
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://zeit.co/new/project?template=togo-soft/zeit-oss)
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://zeit.co/new/project?template=togo-soft/zeit-cos)

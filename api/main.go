@@ -16,11 +16,11 @@ import (
 var (
 	// 配置项
 	config = &Cos{
-		SecretID:  "AKIDa3M4qZAKPOD6sSyVDwVOEyYlvwwrONxR",
-		SecretKey: "dUkw9DJG5oQsdvQ7iKx8e4KT6sXDlzGv",
-		Bucket:    "xuthus-cc-1252305807",
-		Region:    "ap-nanjing",
-		Domain:    "", //若为空 返回默认指定域名[域名以/结尾]
+		SecretID:  "", //API密钥ID
+		SecretKey: "", //API密钥私钥
+		Bucket:    "", //存储桶名称 规则 name-appid
+		Region:    "", //存储桶所属地域 规则 ap-nanjing
+		Domain:    "", //自定义域名 若为空 返回默认指定域名[域名以/结尾]
 	}
 	//客户端
 	client *cos.Client
